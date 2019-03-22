@@ -1,0 +1,50 @@
+<div>
+
+  <div>
+    <h3>Hi, admin!</h3>
+    <nav>
+      <a routerLink="/">Log Out</a>
+    </nav>
+  </div>
+    
+  
+  <h3>New money transfer:</h3>
+
+  <form class="form" (ngSubmit)="onSend()">
+
+    <div class="form-group">
+      <label>Destination account number:</label>
+      <p>
+        <input type="text" class="form-control" name="destinationAccountNo" placeholder="Rachunek odbiorcy">
+      </p>
+    </div>
+
+    <div class="form-group">
+      <label>Destination name:</label>
+      <p>
+        <input type="text" class="form-control" name="destinationName" placeholder="Nazwa odbiorcy">
+      </p>
+    </div>
+
+    <div class="form-group">
+      <label>Destination address:</label>
+      <p>
+        <input type="text" class="form-control" name="destinationAddress" placeholder="Adres odbiorcy">
+      </p>
+    </div>
+
+    <div class="form-group">
+      <label>Amount:</label>
+      <p>
+        <input type="text" class="form-control" name="amount" placeholder="Kwota przelewu">
+      </p>
+    </div>
+
+    <br/>
+
+    <div class="form-group">
+        <input type="submit" value="Transfer money" class="btn btn-primary">
+    </div>
+
+  </form>
+</div>
