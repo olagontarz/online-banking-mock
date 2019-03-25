@@ -15,6 +15,7 @@ export class TransferComponent implements OnInit {
 
   onSend() {
     console.log('Transfering money...')
+    this.router.navigate(['/'])
   }
 
   logout() {
