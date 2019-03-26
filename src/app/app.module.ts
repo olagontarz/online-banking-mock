@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms'
+import { ReactiveFormsModule }    from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,7 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AboutComponent } from './components/pages/about/about.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { TransferComponent } from './components/transfer/transfer.component';
-
+import { HistoryComponent } from './components/history/history.component';
 
 
 @NgModule({
@@ -19,13 +20,15 @@ import { TransferComponent } from './components/transfer/transfer.component';
     LoginComponent,
     AboutComponent,
     HeaderComponent,
-    TransferComponent
+    TransferComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,50 +1,47 @@
 <div>
 
-  <div>
-    <h3>Hi, admin!</h3>
-    <nav>
-      <a routerLink="/">Log Out</a>
-    </nav>
-  </div>
-    
-  
-  <h3>New money transfer:</h3>
+    <h3>New money transfer:</h3>
 
-  <form class="form" (ngSubmit)="onSend()">
+    <form [formGroup]="transferForm" (ngSubmit)="onSubmit()">
 
-    <div class="form-group">
-      <label>Destination account number:</label>
-      <p>
-        <input type="text" class="form-control" name="destinationAccountNo" placeholder="Rachunek odbiorcy">
-      </p>
-    </div>
+        <div class="form-group">
+            <label>Destination account number:</label>
+            <input type="text" class="form-control" formControlName="account" [ngClass]="{ 'is-invalid': submitted && f.account.errors }"/>
+            <div *ngIf="f.account.errors" class="invalid-feedback">
+                <div *ngIf="f.account.errors.required">Field is required</div>
+                <div *ngIf="f.account.errors.pattern">Numbers only</div>
+            </div>
+        </div>
 
-    <div class="form-group">
-      <label>Destination name:</label>
-      <p>
-        <input type="text" class="form-control" name="destinationName" placeholder="Nazwa odbiorcy">
-      </p>
-    </div>
+        <div class="form-group">
+            <label>Destination name:</label>
+            <input type="text" class="form-control" formControlName="name" />
+            <div *ngIf="f.name.errors" class="invalid-feedback">
+                <div *ngIf="f.name.errors.required">Field is required</div>
+            </div>
+        </div>
 
-    <div class="form-group">
-      <label>Destination address:</label>
-      <p>
-        <input type="text" class="form-control" name="destinationAddress" placeholder="Adres odbiorcy">
-      </p>
-    </div>
+        <div class="form-group">
+            <label>Destination address:</label>
+            <input type="text" class="form-control" formControlName="address" />
+        </div>
 
-    <div class="form-group">
-      <label>Amount:</label>
-      <p>
-        <input type="text" class="form-control" name="amount" placeholder="Kwota przelewu">
-      </p>
-    </div>
+        <div class="form-group">
+            <label>Amount:</label>
+            <input type="text" class="form-control" formControlName="amount" [ngClass]="{ 'is-invalid': submitted && f.amount.errors }"/>
+            <div *ngIf="f.amount.errors" class="invalid-feedback">
+                <div *ngIf="f.amount.errors.required">Field is required</div>
+                <div *ngIf="f.amount.errors.pattern">Invalid format</div>
+            </div>
+        </div>
 
-    <br/>
 
-    <div class="form-group">
-        <input type="submit" value="Transfer money" class="btn btn-primary">
-    </div>
+        <br/>
 
-  </form>
+        <div class="form-group">
+            <input type="submit" value="Transfer money" class="btn btn-primary">
+            <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        </div>
+
+    </form>
 </div>
