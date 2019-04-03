@@ -43,18 +43,18 @@ export class TransferComponent implements OnInit {
         }
 
         this.loading = true;
-        console.log('Transfering money...')
+        // console.log('Transfering money...')
 
         this.transferService.send(this.f.account.value, this.f.name.value, this.f.address.value, this.f.amount.value)
             .pipe(first())
             .subscribe(
                 data => {
-                    console.log(data);
+                    // console.log(data);
                     this.loading = false;
                     this.router.navigate(['/history'])
                 },
                 error => {
-                    console.log(error);
+                    // console.log(error);
                 });
     }
 }

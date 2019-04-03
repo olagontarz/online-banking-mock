@@ -3,7 +3,7 @@
   <br/> 
   <ul>
       <li *ngFor="let transfer of transfers">
-          <p> Send {{ transfer.amount }}$ to {{ transfer.account }} ({{ transfer.name }}{{ transfer.address }}) </p>
+          <p> Send {{ transfer.amount }}$ to {{ transfer.account }} {{ transfer.name }} {{ transfer.address }} </p>
       </li>
   </ul>
 </div>

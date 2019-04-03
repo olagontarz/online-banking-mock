@@ -17,7 +17,6 @@ export class HeaderComponent implements OnInit {
 
     constructor(private router: Router, private authService: AuthService, private authGuard: AuthGuard) {
         this.currentUserSubscription = this.authService.currentUser.subscribe(user => {
-            console.log(user);
             this.currentUser = user;
             if (authService.currentUserValue) {
                 this.logged = true;
@@ -26,7 +25,6 @@ export class HeaderComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log("halo")
     }
 
     ngOnDestroy() {
