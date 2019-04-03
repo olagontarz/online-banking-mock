@@ -13,7 +13,7 @@ export class TransferService {
     httpOptions = {
         headers: new HttpHeaders({
           'Content-Type':  'application/json',
-          'Authorization': this.authService.currentUserValue.user.token
+          'Authorization': this.authService.currentUserValue.token
         })
     };
 
