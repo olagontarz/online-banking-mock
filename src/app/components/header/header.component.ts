@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { User } from '../../../models/user';
-import { AuthService } from '../../../services/auth.service';
-import { AuthGuard } from '../../../services/auth.guard';
 import { Router } from '@angular/router';
+
+import { User } from '../../models/user';
+import { AuthService } from '../../services/auth.service';
+import { AuthGuard } from '../../services/auth.guard';
 
 @Component({
     selector: 'app-header',

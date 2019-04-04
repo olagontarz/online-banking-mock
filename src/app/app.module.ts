@@ -8,8 +8,8 @@ import { ReactiveFormsModule }    from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { AboutComponent } from './components/pages/about/about.component';
-import { HeaderComponent } from './components/layout/header/header.component';
+import { AboutComponent } from './components/about/about.component';
+import { HeaderComponent } from './components/header/header.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { HistoryComponent } from './components/history/history.component';
 

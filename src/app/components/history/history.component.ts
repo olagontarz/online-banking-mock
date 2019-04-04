@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+
 import { Transfer } from '../../models/transfer'
 import { TransferService } from '../../services/transfer.service';
 import { AuthService } from '../../services/auth.service';
@@ -29,10 +30,8 @@ export class HistoryComponent implements OnInit {
             .subscribe(
                 data => {
                     this.transfers = data;
-                    // console.log(data);
                 },
                 error => {
-                    // console.log(error);
                 });
     }
 }
