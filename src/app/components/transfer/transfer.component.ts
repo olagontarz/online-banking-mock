@@ -23,7 +23,6 @@ export class TransferComponent implements OnInit {
         }
     }
 
-
     ngOnInit() {
         this.transferForm = this.formBuilder.group({
             account: ['', [ Validators.required, Validators.pattern("^[0-9]*$") ]],
