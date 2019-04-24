@@ -25,7 +25,7 @@ export class HistoryComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.transferService.getHistory("admin")
+        this.transferService.getHistory(this.authService.currentUserValue.username)
             .pipe(first())
             .subscribe(
                 data => {

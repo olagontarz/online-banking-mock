@@ -11,19 +11,24 @@ export class TransferService {
     
     constructor(private http: HttpClient, private authService: AuthService) { }
 
-    httpOptions = {
-        headers: new HttpHeaders({
-          'Content-Type':  'application/json',
-          'Authorization': this.authService.currentUserValue.token
-        })
-    };
-
     getHistory(user: string) {
-        return this.http.get<any>(`${this.backend}/transfers/${user}`, this.httpOptions);
+        var httpOptions = {
+            headers: new HttpHeaders({
+              'Content-Type':  'application/json',
+              'Authorization': this.authService.currentUserValue.token
+            })
+        };
+        return this.http.get<any>(`${this.backend}/transfers/${user}`, httpOptions);
     }
 
     send(account: string, name: string, address: string, amount: string) {
-        return this.http.post<any>(`${this.backend}/transfers`, { account, name, address, amount }, this.httpOptions);
+        var httpOptions = {
+            headers: new HttpHeaders({
+              'Content-Type':  'application/json',
+              'Authorization': this.authService.currentUserValue.token
+            })
+        };
+        return this.http.post<any>(`${this.backend}/transfers`, { account, name, address, amount }, httpOptions);
     }
     
 }
