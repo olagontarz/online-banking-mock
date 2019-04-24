@@ -6,8 +6,8 @@ import { AuthService } from './auth.service'
 
 @Injectable({ providedIn: 'root' })
 export class TransferService {
-    backend:String = 'https://online-banking-backend.herokuapp.com';
-    //backend:String = 'http://localhost:3000';
+    //backend:String = 'https://online-banking-backend.herokuapp.com';
+    backend:String = 'http://localhost:3000';
     
     constructor(private http: HttpClient, private authService: AuthService) { }
 

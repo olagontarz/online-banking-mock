@@ -10,8 +10,8 @@ export class AuthService {
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
 
-    backend:String = 'https://online-banking-backend.herokuapp.com';
-    //backend:String = 'http://localhost:3000';
+    //backend:String = 'https://online-banking-backend.herokuapp.com';
+    backend:String = 'http://localhost:3000';
 
     constructor(private http: HttpClient) {
         this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
