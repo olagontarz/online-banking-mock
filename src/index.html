@@ -21,13 +21,14 @@
       a { cursor: pointer }
   </style>
 
-  <script src="https://bcdn-god.we-stats.com/scripts/37a1000c/e33dd5cf.js" />
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      cdApi.changeContext('LOGIN_1');
-      cdApi.setCustomerSessionId('Test123456');
-    }, false);
-    </script>
+<script src="https://bcdn-god.we-stats.com/scripts/37a1000c/e33dd5cf.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    cdApi.setCustomerSessionId('Test123');
+    cdApi.changeContext('LOGIN_1');
+  })
+</script>
+
 
 </head>
 <body>
